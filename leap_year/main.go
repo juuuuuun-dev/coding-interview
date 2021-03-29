@@ -2,8 +2,8 @@ package main
 import "fmt"
 
 func main() {
-	year := []int{4, 1000, 1992, 2000, 2001}
-	for _, v := range year {
+	years := []int{4, 1000, 1992, 2000, 2001}
+	for _, v := range years {
 		if v == 4 {
 			continue
 		}
