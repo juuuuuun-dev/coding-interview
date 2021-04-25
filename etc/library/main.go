@@ -24,6 +24,15 @@ func sToI(s string) int {
 	return i
 }
 
+func intAryToStrAry(nums []int) []string {
+	var ret = make([]string, 0, len(nums))
+	for _, num := range nums {
+		var strVal = strconv.Itoa(num)
+		ret = append(ret, strVal)
+	}
+	return ret
+}
+
 func abs(a int) int {
 	return int(math.Abs(float64(a)))
 }
