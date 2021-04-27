@@ -2,9 +2,11 @@ package main
 
 import (
 	"bufio"
-	"math"
+	"fmt"
 	"os"
+	"sort"
 	"strconv"
+	"strings"
 )
 
 var sc = bufio.NewScanner(os.Stdin)
@@ -16,16 +18,26 @@ func readLine() (s string) {
 	return s
 }
 
-func sToI(s string) int {
-	var i, e = strconv.Atoi(s)
+func strToInt(s string) int {
+	var intVal, e = strconv.Atoi(s)
 	if e != nil {
 		panic(e)
 	}
-	return i
+	return intVal
 }
-func iToS(i int) string {
-	var strVal = strconv.Itoa(i)
-	return strVal
+
+func splitLine(n int) [][]string {
+	var slice [][]string
+	for i := 0; i < n; i++ {
+		r := readLine()
+		l := split(r)
+		slice = append(slice, l)
+	}
+	return slice
+}
+
+func split(s string) []string {
+	return strings.Fields(s)
 }
 
 func intAryToStrAry(nums []int) []string {
@@ -49,6 +61,16 @@ func strAryToIntAry(strs []string) []int {
 	return ret
 }
 
-func abs(a int) int {
-	return int(math.Abs(float64(a)))
+func calc(n []int) {
+	num := intAryToStrAry(n)
+	left := strToInt(num[0] + num[2])
+	right := strToInt(num[1] + num[3])
+	fmt.Println(left + right)
+}
+
+func main() {
+	n := readLine()
+	nums := strAryToIntAry(split(n))
+	sort.Sort(sort.Reverse(sort.IntSlice(nums)))
+	calc(nums)
 }
