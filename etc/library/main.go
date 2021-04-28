@@ -5,6 +5,7 @@ import (
 	"math"
 	"os"
 	"strconv"
+	"strings"
 )
 
 var sc = bufio.NewScanner(os.Stdin)
@@ -14,6 +15,20 @@ func readLine() (s string) {
 		s = sc.Text()
 	}
 	return s
+}
+
+func splitLine(n int) [][]string {
+	var slice [][]string
+	for i := 0; i < n; i++ {
+		r := readLine()
+		l := split(r)
+		slice = append(slice, l)
+	}
+	return slice
+}
+
+func split(s string) []string {
+	return strings.Fields(s)
 }
 
 func sToI(s string) int {
@@ -52,3 +67,7 @@ func strAryToIntAry(strs []string) []int {
 func abs(a int) int {
 	return int(math.Abs(float64(a)))
 }
+
+// sort
+// sort.Sort(sort.IntSlice(nums))
+// sort.Sort(sort.Reverse(sort.IntSlice(nums)))
