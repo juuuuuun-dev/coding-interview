@@ -31,14 +31,15 @@ func split(s string) []string {
 	return strings.Fields(s)
 }
 
-func sToI(s string) int {
-	var i, e = strconv.Atoi(s)
+func strToInt(s string) int {
+	var intVal, e = strconv.Atoi(s)
 	if e != nil {
 		panic(e)
 	}
-	return i
+	return intVal
 }
-func iToS(i int) string {
+
+func intToStr(i int) string {
 	var strVal = strconv.Itoa(i)
 	return strVal
 }
@@ -66,6 +67,17 @@ func strAryToIntAry(strs []string) []int {
 
 func abs(a int) int {
 	return int(math.Abs(float64(a)))
+}
+
+func floor(a int) int {
+	return int(math.Floor(float64(a)))
+}
+
+func withZero(n int) string {
+	if n < 10 {
+		return "0" + intToStr(n)
+	}
+	return intToStr(n)
 }
 
 // sort
