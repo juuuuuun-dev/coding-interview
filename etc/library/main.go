@@ -43,6 +43,18 @@ func max(s []int) int {
 	return tmp
 }
 
+func min(s []int) int {
+	var tmp int
+	len := len(s)
+	tmp = s[0]
+	for i := 1; i < len; i++ {
+		if s[i] < tmp {
+			tmp = s[i]
+		}
+	}
+	return tmp
+}
+
 func strToInt(s string) int {
 	var intVal, e = strconv.Atoi(s)
 	if e != nil {
