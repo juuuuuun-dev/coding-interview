@@ -17,6 +17,10 @@ func readLine() (s string) {
 	return s
 }
 
+func split(s string) []string {
+	return strings.Fields(s)
+}
+
 func splitLine(n int) [][]string {
 	var slice [][]string
 	for i := 0; i < n; i++ {
@@ -25,10 +29,6 @@ func splitLine(n int) [][]string {
 		slice = append(slice, l)
 	}
 	return slice
-}
-
-func split(s string) []string {
-	return strings.Fields(s)
 }
 
 func max(s []int) int {
@@ -68,15 +68,6 @@ func intToStr(i int) string {
 	return strVal
 }
 
-func intAryToStrAry(nums []int) []string {
-	var ret = make([]string, 0, len(nums))
-	for _, num := range nums {
-		var strVal = strconv.Itoa(num)
-		ret = append(ret, strVal)
-	}
-	return ret
-}
-
 func strAryToIntAry(strs []string) []int {
 	var ret = make([]int, 0, len(strs))
 	for _, str := range strs {
@@ -85,6 +76,15 @@ func strAryToIntAry(strs []string) []int {
 			panic(e)
 		}
 		ret = append(ret, intVal)
+	}
+	return ret
+}
+
+func intAryToStrAry(nums []int) []string {
+	var ret = make([]string, 0, len(nums))
+	for _, num := range nums {
+		var strVal = strconv.Itoa(num)
+		ret = append(ret, strVal)
 	}
 	return ret
 }
