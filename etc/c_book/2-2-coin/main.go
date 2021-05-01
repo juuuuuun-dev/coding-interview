@@ -2,6 +2,7 @@ package main
 
 /*
 a の金額を最小のコインの組み合わせで支払う
+コインの枚数はn
 */
 import (
 	"bufio"
