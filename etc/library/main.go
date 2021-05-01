@@ -21,6 +21,14 @@ func split(s string) []string {
 	return strings.Fields(s)
 }
 
+func strToInt(s string) int {
+	var intVal, e = strconv.Atoi(s)
+	if e != nil {
+		panic(e)
+	}
+	return intVal
+}
+
 func splitLine(n int) [][]string {
 	var slice [][]string
 	for i := 0; i < n; i++ {
@@ -53,14 +61,6 @@ func min(s []int) int {
 		}
 	}
 	return tmp
-}
-
-func strToInt(s string) int {
-	var intVal, e = strconv.Atoi(s)
-	if e != nil {
-		panic(e)
-	}
-	return intVal
 }
 
 func intToStr(i int) string {
@@ -105,5 +105,6 @@ func withZero(n int) string {
 }
 
 // sort
+// sort.Ints(keys)
 // sort.Sort(sort.IntSlice(nums))
 // sort.Sort(sort.Reverse(sort.IntSlice(nums)))
