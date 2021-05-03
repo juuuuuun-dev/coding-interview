@@ -104,6 +104,18 @@ func withZero(n int) string {
 	return intToStr(n)
 }
 
+// revers int
+func reversInt(n int) int {
+	ret := 0
+	for n > 0 {
+		remainder := n % 10
+		ret *= 10
+		ret += remainder
+		n /= 10
+	}
+	return ret
+}
+
 // sort
 // sort.Ints(keys)
 // sort.Sort(sort.IntSlice(nums))
