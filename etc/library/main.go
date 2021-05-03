@@ -2,6 +2,8 @@ package main
 
 import (
 	"bufio"
+	"go/token"
+	"go/types"
 	"math"
 	"os"
 	"strconv"
@@ -115,6 +117,14 @@ func reversInt(n int) int {
 	}
 	return ret
 }
+
+func eval(str string) (types.TypeAndValue, error) {
+	result, err := types.Eval(token.NewFileSet(), nil, token.NoPos, str)
+	return result, err
+}
+
+// 文字列をindexで表示
+// fmt.Println(string("Hello"[1]))
 
 // sort
 // sort.Ints(keys)
