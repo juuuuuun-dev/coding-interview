@@ -31,7 +31,16 @@ func strToInt(s string) int {
 	return intVal
 }
 
-func splitLine(n int) [][]string {
+func splitLineToInt(n int) [][]int {
+	var slice [][]int
+	for i := 0; i < n; i++ {
+		r := readLine()
+		l := strAryToIntAry(split(r))
+		slice = append(slice, l)
+	}
+	return slice
+}
+func splitLineToStr(n int) [][]string {
 	var slice [][]string
 	for i := 0; i < n; i++ {
 		r := readLine()
@@ -41,7 +50,7 @@ func splitLine(n int) [][]string {
 	return slice
 }
 
-func max(s []int) int {
+func maxSlice(s []int) int {
 	var tmp int
 	len := len(s)
 	tmp = s[0]
@@ -53,7 +62,15 @@ func max(s []int) int {
 	return tmp
 }
 
-func min(s []int) int {
+func max(n, i int) int {
+	return int(math.Max(float64(n), float64(i)))
+}
+
+func min(n, i int) int {
+	return int(math.Min(float64(n), float64(i)))
+}
+
+func minSlice(s []int) int {
 	var tmp int
 	len := len(s)
 	tmp = s[0]
