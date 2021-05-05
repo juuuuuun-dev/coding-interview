@@ -9,7 +9,7 @@ func binarySearch(n int, slice []int) (int, int) {
 		count++
 		mid := (l + r) / 2
 		if n == slice[mid] {
-			return n, count
+			return mid, count
 		} else if n > slice[mid] {
 			l = mid + 1
 		} else {
