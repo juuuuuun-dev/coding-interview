@@ -147,3 +147,18 @@ func eval(str string) (types.TypeAndValue, error) {
 // sort.Ints(keys)
 // sort.Sort(sort.IntSlice(nums))
 // sort.Sort(sort.Reverse(sort.IntSlice(nums)))
+
+// 深さ優先 組み合わせ 再帰的
+
+// func dfs(i int, str string, len int, nums []string) int {
+// 	if i == len-1 {
+// 		n := strings.Split(str, "+")
+// 		var t int
+// 		for _, v := range n {
+// 			t += strToInt(v)
+// 		}
+// 		return t
+// 	}
+// 	// + を追加パターンとそのままパターン
+// 	return dfs(i+1, str+nums[i+1], len, nums) + dfs(i+1, str+"+"+nums[i+1], len, nums)
+// }
