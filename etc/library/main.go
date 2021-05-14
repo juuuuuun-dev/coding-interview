@@ -123,16 +123,23 @@ func withZero(n int) string {
 	return intToStr(n)
 }
 
-// revers int
+// revers int 数字反転
+// 先頭が0になる場合は追加しない
+// 10で割った余りで一桁台の数字を取得
+// その余りを答えに追加して10を掛ける
+// 対象の数字を10で割る。
+// これを繰り返す
+// 対象の数字を10で割るを繰り返すことによって数字の桁分処理される
+// 桁の数だけ答えに10を掛けるので最終的に同じ桁になる
 func reversInt(n int) int {
-	ret := 0
+	res := 0
 	for n > 0 {
 		remainder := n % 10
-		ret *= 10
-		ret += remainder
+		res *= 10
+		res += remainder
 		n /= 10
 	}
-	return ret
+	return res
 }
 
 func eval(str string) (types.TypeAndValue, error) {
@@ -162,3 +169,13 @@ func eval(str string) (types.TypeAndValue, error) {
 // 	// + を追加パターンとそのままパターン
 // 	return dfs(i+1, str+nums[i+1], len, nums) + dfs(i+1, str+"+"+nums[i+1], len, nums)
 // }
+
+// 数字の各桁をたす
+func findSumOfDigits(n int) int {
+	sum := 0
+	for n > 0 {
+		sum += n % 10
+		n /= 10
+	}
+	return sum
+}
