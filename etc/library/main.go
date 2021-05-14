@@ -6,6 +6,7 @@ import (
 	"go/types"
 	"math"
 	"os"
+	"sort"
 	"strconv"
 	"strings"
 )
@@ -154,6 +155,10 @@ func eval(str string) (types.TypeAndValue, error) {
 // sort.Ints(keys)
 // sort.Sort(sort.IntSlice(nums))
 // sort.Sort(sort.Reverse(sort.IntSlice(nums)))
+
+func sortReverse(n []int) {
+	sort.Sort(sort.Reverse(sort.IntSlice(n)))
+}
 
 // 深さ優先 組み合わせ 再帰的
 
