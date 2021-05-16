@@ -125,6 +125,16 @@ func floor(a int) int {
 	return int(math.Floor(float64(a)))
 }
 
+// 数字を配列に
+func intToIntoAry(N int) []int {
+	var res []int
+	for N > 0 {
+		res = append(res, N%10)
+		N /= 10
+	}
+	return res
+}
+
 func withZero(n int) string {
 	if n < 10 {
 		return "0" + intToStr(n)
