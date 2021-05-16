@@ -13,6 +13,14 @@ import (
 
 var sc = bufio.NewScanner(os.Stdin)
 
+var r = bufio.NewReader(os.Stdin)
+
+// 一行 space int
+// A := make([]int, N)
+// for i := 0; i < N; i++ {
+// 	fmt.Fscan(r, &A[i])
+// }
+
 func readLine() (s string) {
 	if sc.Scan() {
 		s = sc.Text()
